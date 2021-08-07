@@ -2,7 +2,9 @@ FROM maven:3.6.0-jdk-11-slim AS build
 WORKDIR /app
 VOLUME /tmp
 
-COPY src /app/src
+COPY OnlineBookStore /app/OnlineBookStore
+COPY WebContent /app/WebContent
+COPY setup /app/setup
 COPY pom.xml /app
 RUN mvn -f /app/pom.xml clean package
 
